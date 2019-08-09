@@ -1,94 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/ic_bg"
-        tools:context=".MainActivity">
-    <ImageView
-            android:layout_width="0dp"
-            android:layout_height="250dp"
-            android:src="@drawable/ic_undraw_tree_swing_646s"
-            android:id="@+id/iv_signup" android:layout_marginEnd="58dp"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="59dp" app:layout_constraintHorizontal_bias="0.0"
-            android:layout_marginTop="108dp" app:layout_constraintTop_toTopOf="parent"/>
-    <TextView
-            android:text="Sign in as guest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_guest" android:fontFamily="@font/roboto"
-            android:textColor="#000" app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="28dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="23dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="236dp"
-            app:layout_constraintHorizontal_bias="0.773"/>
-    <TextView
-            android:text="Welcome to MagTapp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_welcome" android:textStyle="bold"
-            android:textSize="25sp" android:textColor="#000" android:fontFamily="@font/roboto"
-            android:layout_marginTop="5dp" app:layout_constraintTop_toBottomOf="@+id/iv_signup"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="68dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="83dp"/>
-    <Button
-            android:text="Connect with Facebook"
-            android:layout_width="0dp"
-            android:layout_height="34dp"
-            android:textAllCaps="false"
-            android:background="@drawable/transparent_rounded"
-            android:drawableStart="@drawable/ic_facebook"
-            android:drawablePadding="2dp"
-            android:paddingStart="30dp"
-            android:id="@+id/btn_fb" android:fontFamily="@font/roboto_thin"
-            android:textSize="12sp" android:textColor="#000"
-            app:layout_constraintEnd_toEndOf="@+id/btn_google"
-            app:layout_constraintStart_toStartOf="@+id/btn_google"
-            android:layout_marginTop="23dp" app:layout_constraintTop_toBottomOf="@+id/btn_google"/>
-    <Button
-            android:text="Connect with Google"
-            android:layout_width="0dp"
-            android:layout_height="34dp"
-            android:textAllCaps="false"
-            android:background="@drawable/transparent_rounded"
-            android:drawableStart="@drawable/ic_google"
-            android:drawablePadding="2dp"
-            android:paddingStart="30dp"
-            android:id="@+id/btn_google" android:fontFamily="@font/roboto_thin"
-            android:textSize="12sp" android:textColor="#000" app:layout_constraintEnd_toEndOf="@+id/tv_welcome"
-            app:layout_constraintStart_toStartOf="@+id/tv_welcome"
-            android:layout_marginTop="27dp"
-            app:layout_constraintTop_toBottomOf="@+id/tv_welcome" android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/btn_fb"/>
-    <TextView
-            android:text="By creating an account you agree our Terms of Service"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:id="@+id/tv_terms" android:textColor="#484848"
-            android:fontFamily="@font/roboto"
-            android:gravity="center"
-            android:layout_marginBottom="96dp" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/btn_fb"
-            app:layout_constraintEnd_toEndOf="@+id/btn_fb" app:layout_constraintHorizontal_bias="0.0"
-            android:layout_marginEnd="8dp"/>
-    <TextView
-            android:text="Made in"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_madein" android:fontFamily="@font/roboto_thin"
-            android:textColor="#000"
-            app:layout_constraintTop_toBottomOf="@+id/tv_terms"
-            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="32dp"
-            app:layout_constraintStart_toStartOf="@+id/tv_terms" app:layout_constraintEnd_toEndOf="@+id/tv_terms"
-    />
-    <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" app:srcCompat="@drawable/ic_india"
-            android:id="@+id/imageView3"
-            app:layout_constraintTop_toTopOf="@+id/tv_madein" app:layout_constraintBottom_toBottomOf="@+id/tv_madein"
-            app:layout_constraintStart_toEndOf="@+id/tv_madein"
-            android:layout_marginStart="8dp"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity">
+        <!--Splash Layout-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_splash" android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:background="@drawable/ic_splash_bg">
+
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" tools:srcCompat="@tools:sample/avatars[0]"
+                    android:id="@+id/iv_mt_logo"
+                    app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="220dp"/>
+            <ImageView
+                    android:layout_width="357dp"
+                    android:layout_height="70dp" tools:srcCompat="@tools:sample/backgrounds/scenic[1]"
+                    android:id="@+id/iv_mt_title_logo" app:layout_constraintStart_toStartOf="@+id/iv_mt_logo"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_mt_logo" app:layout_constraintHorizontal_bias="0.497"
+                    android:layout_marginTop="12dp" app:layout_constraintTop_toBottomOf="@+id/iv_mt_logo"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--Signup Form-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_form" android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_background"
+                android:visibility="visible">
+            <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="250dp"
+                    android:src="@drawable/signupimage"
+                    android:id="@+id/iv_signup" android:layout_marginEnd="58dp"
+                    app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="59dp" app:layout_constraintHorizontal_bias="0.0"
+                    android:layout_marginTop="108dp" app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                    android:text="Sign in as guest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_guest" android:fontFamily="@font/roboto"
+                    android:textColor="#000" app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="28dp"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="23dp"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="236dp"
+                    app:layout_constraintHorizontal_bias="0.773"/>
+            <TextView
+                    android:text="Welcome to MagTapp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_welcome" android:textStyle="bold"
+                    android:textSize="25sp" android:textColor="#000" android:fontFamily="@font/roboto"
+                    android:layout_marginTop="5dp" app:layout_constraintTop_toBottomOf="@+id/iv_signup"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="68dp"
+                    app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="83dp"/>
+            <Button
+                    android:text="Connect with Facebook"
+                    android:layout_width="0dp"
+                    android:layout_height="34dp"
+                    android:textAllCaps="false"
+                    android:background="@drawable/transparent_rounded"
+                    android:drawableStart="@drawable/ic_facebook"
+                    android:drawablePadding="2dp"
+                    android:paddingStart="30dp"
+                    android:id="@+id/btn_fb" android:fontFamily="@font/roboto"
+                    android:textSize="12sp" android:textColor="#000"
+                    app:layout_constraintEnd_toEndOf="@+id/btn_google"
+                    app:layout_constraintStart_toStartOf="@+id/btn_google"
+                    android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/btn_google"/>
+            <Button
+                    android:text="Connect with Google"
+                    android:layout_width="0dp"
+                    android:layout_height="34dp"
+                    android:textAllCaps="false"
+                    android:background="@drawable/transparent_rounded"
+                    android:drawableStart="@drawable/ic_google"
+                    android:drawablePadding="2dp"
+                    android:paddingStart="30dp"
+                    android:id="@+id/btn_google" android:fontFamily="@font/roboto"
+                    android:textSize="12sp" android:textColor="#000" app:layout_constraintEnd_toEndOf="@+id/tv_welcome"
+                    app:layout_constraintStart_toStartOf="@+id/tv_welcome"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_welcome" android:layout_marginBottom="16dp"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_fb"/>
+            <TextView
+                    android:text="@string/terms_of_service"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:id="@+id/tv_terms" android:textColor="#484848"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center"
+                    android:layout_marginBottom="96dp" app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/btn_fb"
+                    app:layout_constraintEnd_toEndOf="@+id/btn_fb" app:layout_constraintHorizontal_bias="0.0"
+                    android:layout_marginEnd="8dp"/>
+            <TextView
+                    android:text="@string/signup_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#1870C9"
+                    android:textSize="20sp"
+                    android:id="@+id/tv_email_signup" app:layout_constraintEnd_toEndOf="@+id/btn_fb"
+                    app:layout_constraintStart_toStartOf="@+id/btn_fb" android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_fb" android:fontFamily="sans-serif"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!--Made in India group-->
+        <TextView
+                android:text="Made in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_madein" android:fontFamily="@font/roboto"
+                android:textColor="#000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginBottom="16dp"/>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" app:srcCompat="@drawable/ic_india"
+                android:id="@+id/imageView3"
+                app:layout_constraintTop_toTopOf="@+id/tv_madein"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_madein"
+                app:layout_constraintStart_toEndOf="@+id/tv_madein"
+                android:layout_marginStart="8dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
