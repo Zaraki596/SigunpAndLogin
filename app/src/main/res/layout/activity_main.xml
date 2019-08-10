@@ -9,7 +9,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_splash" android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:background="@drawable/ic_splash_bg">
 
 
@@ -30,11 +30,13 @@
 
         <!--Signup Form-->
 
+
+        <!--Made in India group-->
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_form" android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/ic_background"
-                android:visibility="visible">
+                android:visibility="gone">
             <ImageView
                     android:layout_width="0dp"
                     android:layout_height="250dp"
@@ -113,9 +115,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/btn_fb" android:fontFamily="sans-serif"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-        <!--Made in India group-->
         <TextView
                 android:text="Made in"
                 android:layout_width="wrap_content"
